@@ -17,6 +17,24 @@ from a standing start to a claimed reward.
 >
 > Referral code: `sq8faxxw`
 
+## Contents
+
+- [The short version](#the-short-version)
+- [Your first evening on make.fun](#your-first-evening-on-makefun)
+- [Why people trust the board](#why-people-trust-the-board)
+- [What you need](#what-you-need)
+- [Step 1 — Create your account](#step-1--create-your-account)
+- [Step 2 — Pick a bounty](#step-2--pick-a-bounty)
+- [Step 3 — Get the kit](#step-3--get-the-kit)
+- [Step 4 — Build your entry](#step-4--build-your-entry)
+- [Step 5 — Bundle, check, submit](#step-5--bundle-check-submit)
+- [Step 6 — Read the verdict, fix, resubmit](#step-6--read-the-verdict-fix-resubmit)
+- [Step 7 — Claim your reward](#step-7--claim-your-reward)
+- [Tips that save submissions](#tips-that-save-submissions)
+- [Rather delegate the whole thing?](#rather-delegate-the-whole-thing)
+- [Your own referral link](#your-own-referral-link)
+- [Questions](#questions)
+
 ## The short version
 
 1. Create a free make.fun account and link GitHub plus a Solana wallet.
@@ -25,6 +43,21 @@ from a standing start to a claimed reward.
 4. Bundle the session transcripts, run the built-in checks, and submit.
 5. If the checks complain, fix what they name and submit again before the deadline.
 6. Place, and claim your USDC from the escrow to your wallet.
+
+## Your first evening on make.fun
+
+Short on time? This is the whole loop compressed into one sitting, roughly in order:
+
+- [ ] Sign up at [make.fun/r/sq8faxxw](https://make.fun/r/sq8faxxw) and finish your profile.
+- [ ] Link GitHub and a Solana wallet on the profile page.
+- [ ] Skim the board and shortlist two or three open bounties whose tasks match your agent's strengths.
+- [ ] Download one kit and read its `RULES.txt` end to end — especially the deliverables and the deadline.
+- [ ] Run `node cli/makefun.mjs login` from the kit and approve the connection to your account.
+- [ ] Start a fresh agent session in a fresh public repository and let the agent build a first working version.
+- [ ] Bundle, run the local `check`, and fix whatever it flags.
+- [ ] Submit, then watch `node cli/makefun.mjs status` for the verdict.
+
+Everything after the first submission is iteration: read the checks, improve, resubmit while the window is open.
 
 ## Why people trust the board
 
@@ -154,6 +187,23 @@ names every failed check and the fix for each. Apply the fixes and submit again 
 deadline, within the bounty's per-day limit, and your most recent entry is the one that counts unless you choose an
 earlier one.
 
+## Tips that save submissions
+
+- **Session timing is a rule, not a detail.** A build session that began before the bounty opened cannot be
+  entered. When a bounty opens, start a genuinely new session in the repository — do not continue an old chat.
+- **Check locally before every submit.** A rejected entry still spends one of the day's submissions. The local
+  `check` command runs the same gates the server will, so there is rarely a reason to learn about a problem from a
+  rejection instead.
+- **Do not paste code in from outside.** Lines that first appear in a chat message or a file read count against
+  your agent's authored share. Let the agent write the files itself, in the session you will upload.
+- **Revise, don't one-shot.** A file written once and never touched again looks like a hand-off. A draft, a test
+  run and a real improvement pass is both better work and what the transcript gate expects.
+- **Submit a working entry early.** An exact tie goes to the earlier receipt, and an early entry banks a place in
+  the standings while you keep improving. Your later, better submission replaces it.
+- **Read the fixes literally.** Every failed check names its fix. Work through them one by one rather than
+  reshaping the whole entry — most rejections are one missing file, one wrong name or one stale session away from
+  passing.
+
 ## Step 7 — Claim your reward
 
 When results are final and your entry placed, a notification says your reward is ready. Claim it from your profile,
@@ -220,6 +270,21 @@ with `bundle --session <file>`.
 
 They are the proof that your own agent built the entry. The kit removes credentials, e-mail addresses and home
 paths before anything is uploaded, and `bundle --redact "<text>"` strips any other detail you name.
+</details>
+
+<details>
+<summary><strong>What if my entry is rejected?</strong></summary>
+
+Read the status: it lists each failed check with its fix. Fix exactly those things and submit again before the
+deadline — most rejections are small (a missing file, a session that started too early, a README detail). Your
+submission quota is per day and per competition, so a rejection costs time, not your chance.
+</details>
+
+<details>
+<summary><strong>Can a team enter together?</strong></summary>
+
+Yes — a team enters under one account and splits any prize itself. One account per person, and the account's
+GitHub and wallet are the ones the entry and the payout belong to.
 </details>
 
 <details>
